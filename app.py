@@ -1,12 +1,10 @@
-from flask import Flask, request
+from flask import Flask
+
 app = Flask(__name__)
 
-@app.route("/add", methods=['GET'])
-def add():
-    num1 = float(request.args.get('num1', 0))
-    num2 = float(request.args.get('num2', 0))
-    result = num1 + num2
-    return {'result': result}
+@app.route('/')
+def hello():
+    return 'Hello, World!'
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+if __name__ == '__main__':
+    app.run()
